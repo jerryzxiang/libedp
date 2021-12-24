@@ -33,18 +33,3 @@ def nda_to_csv(inpath, outpath=':auto:', testcols=False, split=False, small=Fals
 
     df = read_nda(inpath, testcols=testcols, split=split, small=small)
     df.to_csv(outpath)
-
-# change user filepath based on local computer name
-# this is for WSL 
-#user_filepath = r'C:\\Users\\xiang\\'
-user_filepath = '/mnt/c/Users/xiang/'
-data_filepath = 'Box/PNE - R&D (Xiaofang)/R&D Adminstration/Projects/E-chem/E-chem data (auto backup) - Copy2'
-# data_filepath = 'Box\PNE - R&D (Xiaofang)\R&D Adminstration\Projects\E-chem\E-chem data (auto backup)'
-
-backup_files_folder = user_filepath + data_filepath
-outpath = backup_files_folder 
-
-nda_files = os.listdir(outpath)
-
-for item in nda_files:
-    nda_to_csv(backup_files_folder + "\\" + item)
