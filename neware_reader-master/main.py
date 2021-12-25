@@ -1,6 +1,6 @@
 import pandas as pd
 import os
-import neware as n
+from neware import NDA_Processor as n
 import new_nda, old_nda, nda_version_8_0
 # change user filepath based on local computer name
 # this is for WSL 
@@ -15,6 +15,6 @@ backup_files_folder = user_filepath + data_filepath
 outpath = backup_files_folder 
 
 nda_files = os.listdir(outpath)
-
 for item in nda_files:
-    n.nda_to_csv(backup_files_folder + "/" + item)
+    inpath = backup_files_folder + "/" + item
+    n.nda_to_csv(inpath, inpath)

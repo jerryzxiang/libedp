@@ -1,5 +1,3 @@
-#!/bin/python3.4
-
 import sys, getopt
 import binascii
 import time
