@@ -17,4 +17,4 @@ outpath = backup_files_folder
 nda_files = os.listdir(outpath)
 for item in nda_files:
     inpath = backup_files_folder + "/" + item
-    n.nda_to_csv(inpath, inpath)
+    n.nda_to_csv(inpath)

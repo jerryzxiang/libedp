@@ -3,8 +3,8 @@ import os
 import new_nda, old_nda, nda_version_8_0
 
 class NDA_Processor():
-    def __init__(self, inpath):
-        self.inpath = inpath
+    def __init__(self):
+        self=self
 
     def read_nda(inpath, testcols=False, split=False, small=False):
         # inpath: 'yourfile.nda'
