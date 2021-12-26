@@ -23,7 +23,8 @@ class libplot():
         self = self
         
     def plotDischargeCapacity(file, filename, mass, 
-                                label, savePlot=False, saveFilePath=None):
+                                label, showPlot=True, 
+                                savePlot=False, saveFilePath=None):
         """
         function to plot and save mass-normalized discharge capacity of one file
         """
@@ -43,21 +44,19 @@ class libplot():
         plt.title(label + " " + filename + 
                 ' Capacity of discharge', fontsize=12)
         plt.xlim(0, len(cycleNumber))
-        plt.show()
+
+        if showPlot is True:
+            plt.show()
 
         if savePlot is True:
             plt.savefig(saveFilePath + label + "_" + 
                         filename +"_capacity_of_discharge" 
                         + ".png", format="PNG", dpi=300, bbox_inches = "tight")
-        
-        # clear figs
-        #plt.cla()
-        #plt.clf()
-        #plt.close()
 
     def plotFirstCycle(file, filename, mass, 
                         label, lowerVoltageLimit=2.0,
                         upperVoltageLimit=4.4,
+                        showPlot=True,
                         savePlot=False, saveFilePath=None):
         """
         function to plot and save first cycle charge and discharge curve
@@ -84,9 +83,10 @@ class libplot():
         plt.title(label + " " + filename 
                  +' First Cycle', fontsize = 16)
         plt.ylim(lowerVoltageLimit, upperVoltageLimit) # voltage limits
-        plt.show()
+        if showPlot is True:
+            plt.show()
 
         if savePlot is True:
-            plt.savefig(user_filepath + folder_filepath + 'Results\\' + label 
+            plt.savefig(saveFilePath + label 
                         + "_" + filename + "_first_cycle" 
                         + ".png", format="PNG", dpi=300, bbox_inches = "tight")

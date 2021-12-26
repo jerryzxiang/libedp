@@ -27,6 +27,9 @@ for item in range(len(file_names[0])):
         mass = active_mass[0][item]
         
         if filename != 0:
-           lp.plotDischargeCapacity(file, filename, mass, label, savePlot=True, saveFilePath=save_file_path)
+           lp.plotDischargeCapacity(file, filename, mass, label, 
+                                showPlot=False,
+                                savePlot=True, saveFilePath=save_file_path)
            lp.plotFirstCycle(file, filename, mass, label,
+                                showPlot=False,
                                 savePlot=True, saveFilePath=save_file_path)
