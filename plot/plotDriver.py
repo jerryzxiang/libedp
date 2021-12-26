@@ -2,7 +2,6 @@
 Main section
 """
 
-"""
 # parsing command line args
 #cathode = sys.argv[1]#$print(cathode)
 
@@ -43,4 +42,3 @@ for item in range(len(file_names[0])):
            # getCapacityRetention(file, filename, mass, label)
            # print(l50)
            # CapacityRetentionExcelExport(label_name, l50, l100, l150, l200)
-"""
