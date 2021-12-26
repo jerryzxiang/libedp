@@ -2,10 +2,13 @@ import pandas as pd
 from pandas import DataFrame
 
 class libdataexport():
+    """
+
+    """
     def __init__(self):
         self = self
     
-    def export2csv(self, file, filename, mass, label):
+    def export2csv(file, filename, mass, label):
         df = DataFrame({'Label': label, 'Active Mass':
                         mass})
         df = pd.DataFrame.from_dict(df, orient='index')
