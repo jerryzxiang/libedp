@@ -2,13 +2,27 @@ import pandas as pd
 from pandas import DataFrame
 from libplot import libplot as lp
 
-user_filepath = r"/mnt/c/Users/xiang/" #change username based on computer
+"""
+A script to plot discharge capacity vs cycle number and
+first cycle charge/discharge for coin cells listed in 
+a spreadsheet. This spreadsheet was made manually and
+contains the 'Label', which is the name given to the
+coin cell cathode sample by the author, the 'Active Mass (g)'
+which is the active mass of the cathode sample in the cell,
+the 'File Name', which is the name of the NDA file of the cell,
+among other information.
+
+This script uses the libplot library.
+"""
+# Change filepaths based on user preferences
+user_filepath = r"/mnt/c/Users/xiang/" 
 folder_filepath = "Documents/libedp/test_data/E-chem data (auto backup) - Copy2/"
+save_file_path = user_filepath + folder_filepath
 excel_file = "LCO_Echem_data_summary.xlsx"
 sheet_name = "Performance Summary"
 
-def main(user_filepath, folder_filepath, excel_file, sheet_name):
-    save_file_path = user_filepath + folder_filepath
+def main(user_filepath, folder_filepath, 
+        save_file_path, excel_file, sheet_name):
     df = pd.ExcelFile(user_filepath + folder_filepath + 
                     excel_file).parse(sheet_name)
 
@@ -36,4 +50,4 @@ def main(user_filepath, folder_filepath, excel_file, sheet_name):
                                         saveFilePath=save_file_path)
 
 if __name__ = '__main__':
-    main(user_filepath, folder_filepath, excel_file, sheet_name)
+    main(user_filepath, folder_filepath, save_file_path, excel_file, sheet_name)
