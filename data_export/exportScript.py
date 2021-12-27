@@ -11,18 +11,11 @@ def main(user_filepath, folder_filepath, excel_file, sheet_name):
     save_file_path = user_filepath + folder_filepath
     df = pd.ExcelFile(user_filepath + folder_filepath + 
                     excel_file).parse(sheet_name)
-
-    #labels=[]
-    #labels.append(df['Label'])
     labels = df['Label']
-    #file_names = [] # create empty list of file names
-    #file_names.append(df['File Name'])
     file_names = df['File Name']
-    #active_mass=[]
-    #active_mass.append(df['Active mass (g)'])
     active_mass = df['Active mass (g)']
 
-    for item in range(len(file_names)):
+    for item in file_names:
         if item > 0:
             filename = file_names[item]
             label = labels[item]
