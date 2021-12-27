@@ -30,7 +30,7 @@ def main(user_filepath, folder_filepath,
     file_names = df['File Name']
     active_mass = df['Active mass (g)']
 
-    for item in range(len(file_names)):
+    for item in file_names:
         if item > 0:
             filename = file_names[item]
             label = labels[item]
