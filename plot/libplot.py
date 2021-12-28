@@ -68,10 +68,6 @@ class libplot():
         firstCycleVoltage = firstCycle['Voltage(V)']
         firstCycleCapacity = firstCycle['CapaCity(mAh)']
         
-        df2 = pd.ExcelFile(file).parse(sheet_name = 1)
-        firstCycleDischargeCapacity = df2.iat[0,3] / mass
-        firstCycleEfficiency = 100 * df2.iat[0,3] / df2.iat[0,2]
-        
         plt.figure()
         plt.plot(firstCycleCapacity / mass, firstCycleVoltage, 'r', 
                 linestyle = 'none', marker = '.', markersize = 2)
