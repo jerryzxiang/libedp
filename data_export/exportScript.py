@@ -1,6 +1,6 @@
 import pandas as pd
 from pandas import DataFrame
-from libdataexport import libdataexport as lde
+from libdataexport import LIBDataExport as lde
 
 user_filepath = r"/mnt/c/Users/xiang/" #change username based on computer
 folder_filepath = "Documents/libedp/test_data/E-chem data (auto backup) - Copy2/"
