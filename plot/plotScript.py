@@ -31,23 +31,21 @@ def main(user_filepath, folder_filepath,
     active_mass = df['Active mass (g)']
 
     for item in file_names:
-        if item > 0:
-            filename = file_names[item]
-            label = labels[item]
-            #numberOfCycles = len(df['Capacity of discharge(mAh)'])
-            
-            file = save_file_path + str(filename) + '.xls'
-            mass = active_mass[item]
-            
-            if filename != 0:
-                lp.plotDischargeCapacity(file, filename, mass, label, 
-                                        showPlot=False,
-                                        savePlot=True, 
-                                        saveFilePath=save_file_path)
-                lp.plotFirstCycle(file, filename, mass, label,
-                                        showPlot=False,
-                                        savePlot=True, 
-                                        saveFilePath=save_file_path)
+        filename = file_names[item]
+        label = labels[item]
+        #numberOfCycles = len(df['Capacity of discharge(mAh)'])
+        
+        file = save_file_path + str(filename) + '.xls'
+        mass = active_mass[item]
+        
+        lp.plot_discharge_capacity(file, filename, mass, label, 
+                                showPlot=False,
+                                savePlot=True, 
+                                saveFilePath=save_file_path)
+        lp.plot_first_cycle(file, filename, mass, label,
+                                showPlot=False,
+                                savePlot=True, 
+                                saveFilePath=save_file_path)
 
-if __name__ = '__main__':
+if __name__ == '__main__':
     main(user_filepath, folder_filepath, save_file_path, excel_file, sheet_name)

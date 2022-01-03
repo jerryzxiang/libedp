@@ -22,9 +22,9 @@ class libplot():
     def __init__(self):
         self = self
         
-    def plotDischargeCapacity(file, filename, mass, 
-                                label, showPlot=True, 
-                                savePlot=False, saveFilePath=None):
+    def plot_discharge_capacity(file: str, filename: str, mass: float, 
+                                label: str, showPlot: bool=True, 
+                                savePlot: bool=False, saveFilePath: bool=None):
         """
         function to plot and save mass-normalized discharge capacity of one file
         """
@@ -53,11 +53,11 @@ class libplot():
                         filename +"_capacity_of_discharge" 
                         + ".png", format="PNG", dpi=300, bbox_inches = "tight")
 
-    def plotFirstCycle(file, filename, mass, 
-                        label, lowerVoltageLimit=2.0,
-                        upperVoltageLimit=4.4,
-                        showPlot=True,
-                        savePlot=False, saveFilePath=None):
+    def plot_first_cycle(file: str, filename: str, mass: float, 
+                        label: str, lowerVoltageLimit: float=2.0,
+                        upperVoltageLimit: float=4.4,
+                        showPlot: bool=True,
+                        savePlot: bool=False, saveFilePath: bool=None):
         """
         function to plot and save first cycle charge and discharge curve
         Default values of lower and upper voltage limits
